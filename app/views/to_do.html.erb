@@ -1,27 +1,24 @@
 <main>
-  <h1>Welcome, let's make some lists!</h1>
+  <h1> Input Tasks </h1>
   <table class="table">
     <thead>
       <tr>
         <th>
-          Here are your lists; to view associated tasks click on the list.
+          What to do?
         </th>
       </tr>
     </thead>
     <tbody>
-    <% @lists.each do |list| %>
+    <% @tasks.each do |task| %>
       <tr>
         <td>
-          <a href="/lists/:name<%= list.name %>"> <%=list.name %> </a>
+        <%=task.name %> </a>
         <% end %>
        </td>
-     </tr>
-   </tbody>
- </table>
 
 
- <div>
-    <form action="/list" method="post">
+
+    <form action="/task" method="get">
       <label for="task">----></label>
       <input type"text" name="list[name]" value=""
       placeholder= "Whatcha wanna do?" >
@@ -31,5 +28,5 @@
 
 
 
-
+  </table>
 </main>
